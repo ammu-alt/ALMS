@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 30, 2020 at 11:48 AM
+-- Generation Time: Jan 03, 2021 at 03:36 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `voreg` (
   `VO_ID` varchar(30) NOT NULL,
   `EMAIL` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `PASSWORD` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `STATUS` varchar(10) NOT NULL,
+  `STATUS` int(10) NOT NULL,
   PRIMARY KEY (`VILLAGE_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `voreg` (
 --
 
 INSERT INTO `voreg` (`NAME`, `DISTRICT`, `TALUK`, `VILLAGE_OFFICE`, `VILLAGE_ID`, `VO_ID`, `EMAIL`, `PASSWORD`, `STATUS`) VALUES
-('Meenakshi', 'Ernakulam', 'Aluva', 'Aluva East', 'aluva123', 'IMG_9868.JPG', 'vo@gm', '0339448060128eec9599c4529ff3d5c5', 'Approved');
+('Meenakshi', 'Ernakulam', 'Aluva', 'Aluva East', 'aluva123', 'IMG_9868.JPG', 'vo@gm', '0339448060128eec9599c4529ff3d5c5', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
