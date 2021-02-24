@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 03, 2021 at 03:36 PM
+-- Generation Time: Feb 24, 2021 at 12:22 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -40,9 +40,16 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `DISTRICT` varchar(20) NOT NULL,
   `FROMDATE` date NOT NULL,
   `TODATE` date NOT NULL,
-  `STATUS` varchar(10) NOT NULL,
+  `STATUS` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`LANDID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`LANDID`, `NAME`, `CONTACT`, `EMAIL`, `ADDRESS`, `VILLAGE`, `TALUK`, `DISTRICT`, `FROMDATE`, `TODATE`, `STATUS`) VALUES
+('', 'APARNA', 25875156, 'appu@gmail.com', 'pullattu house ayakkadu thrikkariyoor po kothamang', 'Aluva', 'ktmglm', 'Ernakulam', '2021-01-10', '2021-01-30', 'Booked');
 
 -- --------------------------------------------------------
 
@@ -70,7 +77,8 @@ INSERT INTO `customercare` (`LANDID`, `NAME`, `CONTACT`, `SERVICE_YOU_NEED`, `ST
 ('LD5fc5b6d42a7a4', 'Meenakshi', 9072960424, 'Seeds,Labour', 'Rejected'),
 ('LD5fc495da10831', 'Aparna Ajith', 8129490416, 'others', 'Approved'),
 ('LD5fc5b6d42a7a4', 'APARNA', 8129490416, 'Machinery, Tool', 'Rejected'),
-('LD5fc5b6d42a7a4', 'Meenakshi Rajesh', 7057153047, 'Labour', 'Rejected');
+('LD5fc5b6d42a7a4', 'Meenakshi Rajesh', 7057153047, 'Labour', 'Rejected'),
+('LD5fc5b6d42a7a4', 'Sreerag B', 8129490416, 'Labour', '');
 
 -- --------------------------------------------------------
 
@@ -146,7 +154,9 @@ INSERT INTO `userlogin` (`EMAIL`, `PASSWORD`, `ACCTYPE`, `STATUS`) VALUES
 ('don@gmail.com', '6a01bfa30172639e770a6aacb78a3ed4', 2, 1),
 ('vo@gmail.com', '0339448060128eec9599c4529ff3d5c5', 1, 1),
 ('admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 0, 1),
-('appu@gmail.com', '622622b00805c54040dd9a15674a5117', 2, 1);
+('appu@gmail.com', '622622b00805c54040dd9a15674a5117', 2, 1),
+('asd@gmail.com', '7815696ecbf1c96e6894b779456d330e', 2, 1),
+('apz@gmail.com', 'de108e19e410b0443c23eeac7dc64fb2', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -177,7 +187,9 @@ INSERT INTO `userreg` (`NAME`, `EMAIL`, `PASSWORD`, `CONFPW`, `ADDRESS`, `TALUK`
 ('Aparna Ajith', 'aparna@gmail.com', '46aab74d298e13f19d28aa38dda7277f', '46aab74d298e13f19d28aa38dda7277f', 'Pullattu House, Ayakkadu, Thri', 'Kothamangalam', 'Ernakulam', 686692, 8129490416),
 ('Meenakshi Rajesh', 'meenu@gmail.com', '4b03afcdb71c48eb81a2405b0998019f', '4b03afcdb71c48eb81a2405b0998019f', 'Pottomkudy (H), Vellarapilly, ', 'Aluva', 'Ernakulam', 683580, 9072960424),
 ('Appu', 'appu@gmail.com', '622622b00805c54040dd9a15674a5117', '622622b00805c54040dd9a15674a5117', 'pullattu house ayakkadu thrikk', 'ktmglm', 'ekm', 686692, 8297461350),
-('Doney', 'don@gmail.com', '6a01bfa30172639e770a6aacb78a3ed4', '6a01bfa30172639e770a6aacb78a3ed4', 'Kallingal House, Pulinthanam P', 'Muvattupuzha', 'Ernakulam', 686671, 9497504753);
+('Doney', 'don@gmail.com', '6a01bfa30172639e770a6aacb78a3ed4', '6a01bfa30172639e770a6aacb78a3ed4', 'Kallingal House, Pulinthanam P', 'Muvattupuzha', 'Ernakulam', 686671, 9497504753),
+('APARNA', 'asd@gmail.com', '7815696ecbf1c96e6894b779456d330e', '7815696ecbf1c96e6894b779456d330e', 'pullattu house ayakkadu thrikk', 'Kothamangalam', 'Ernakulam', 686692, 9072960424),
+('APARNA', 'apz@gmail.com', 'de108e19e410b0443c23eeac7dc64fb2', 'de108e19e410b0443c23eeac7dc64fb2', 'pullattu house ayakkadu thrikk', 'Kothamangalam', 'Ernakulam', 686692, 8129490416);
 
 -- --------------------------------------------------------
 
@@ -195,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `voreg` (
   `VO_ID` varchar(30) NOT NULL,
   `EMAIL` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `PASSWORD` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `STATUS` int(10) NOT NULL,
+  `STATUS` int(10) DEFAULT NULL,
   PRIMARY KEY (`VILLAGE_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
